@@ -15,6 +15,7 @@ module.exports = {
         neutral: '#6B7280',
         background: '#F9FAFB',
         card: '#FFFFFF',
+        foreground: '#1F2937',
       },
     },
   },

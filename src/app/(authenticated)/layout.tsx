@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
+import EnvironmentCheck from '@/components/EnvironmentCheck'
 import type { User } from '@supabase/supabase-js'
 
 export default function AuthenticatedLayout({
@@ -60,7 +61,8 @@ export default function AuthenticatedLayout({
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <EnvironmentCheck>
+      <div className="min-h-screen bg-background">
       {/* Mobile-first navigation */}
       <div className="lg:hidden">
         {/* Mobile header */}
@@ -168,5 +170,6 @@ export default function AuthenticatedLayout({
         {children}
       </div>
     </div>
+    </EnvironmentCheck>
   )
 }

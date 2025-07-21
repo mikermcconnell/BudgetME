@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
+import EnvironmentCheck from '@/components/EnvironmentCheck'
 
 export default function LoginPage() {
   const router = useRouter()
@@ -35,7 +36,8 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center px-4">
+    <EnvironmentCheck>
+      <div className="min-h-screen bg-background flex items-center justify-center px-4">
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-foreground">
@@ -107,6 +109,7 @@ export default function LoginPage() {
           </div>
         </form>
       </div>
-    </div>
+      </div>
+    </EnvironmentCheck>
   )
 }
